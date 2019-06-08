@@ -18,6 +18,11 @@ const App: FunctionComponent = () => {
     setTodos([...todos, {id: getUniqueId(), text, completed: false}]);
     setText('');
   };
+  const toggleCompleted = (id: string) => () => {
+    const index = todos.findIndex(todo => todo.id === id);
+    todos[index].completed = !todos[index].completed;
+    setTodos(todos);
+  };
   return (
     <>
       <div>
@@ -26,7 +31,10 @@ const App: FunctionComponent = () => {
       </div>
       <ul>
         {todos.map(todo => (
-          <li key={todo.id}>{todo.text}</li>
+          <li key={todo.id}>
+            <button onClick={toggleCompleted(todo.id)}></button>
+            {todo.text}
+          </li>
         ))}
       </ul>
     </>
