@@ -26,8 +26,13 @@ const App: FunctionComponent = () => {
   };
   return (
     <>
+      <h1 className="App">React Todo</h1>
       <div>
-        <input onChange={e => setText(e.target.value)} value={text}></input>
+        <input
+          placeholder="タスクを追加"
+          onChange={e => setText(e.target.value)}
+          value={text}
+        />
         <button onClick={addTodo}>add</button>
       </div>
       <div>
@@ -45,7 +50,7 @@ const App: FunctionComponent = () => {
           )
           .map(todo => (
             <li key={todo.id}>
-              <button onClick={toggleCompleted(todo.id)}></button>
+              <input type="checkbox" onClick={toggleCompleted(todo.id)} />
               {todo.text}
             </li>
           ))}
