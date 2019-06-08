@@ -1,22 +1,36 @@
 import * as React from 'react';
+import {FunctionComponent, useState} from 'react';
 import './App.css';
 
-import logo from './logo.svg';
-
-class App extends React.Component {
-  public render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+interface Todo {
+  id: string;
+  text: string;
+  completed: boolean;
 }
+
+const App: FunctionComponent = () => {
+  const [todos, setTodos] = useState<Todo[]>([]);
+  const [text, setText] = useState('');
+  const getUniqueId = () => {
+    return new Date().getTime().toString(36) + '-' + Math.random().toString(36);
+  };
+  const addTodo = () => {
+    setTodos([...todos, {id: getUniqueId(), text, completed: false}]);
+    setText('');
+  };
+  return (
+    <>
+      <div>
+        <input onChange={e => setText(e.target.value)} value={text}></input>
+        <button onClick={addTodo}>add</button>
+      </div>
+      <ul>
+        {todos.map(todo => (
+          <li key={todo.id}>{todo.text}</li>
+        ))}
+      </ul>
+    </>
+  );
+};
 
 export default App;
