@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {FunctionComponent, useState} from 'react';
+import styled from 'styled-components';
 import './App.css';
 
 interface Todo {
@@ -26,7 +27,7 @@ const App: FunctionComponent = () => {
   };
   return (
     <>
-      <h1 className="App">React Todo</h1>
+      <h1>React Todo</h1>
       <div>
         <input
           placeholder="タスクを追加"
@@ -40,7 +41,7 @@ const App: FunctionComponent = () => {
         <button onClick={() => setFilter('completed')}>COMPLETED</button>
         <button onClick={() => setFilter('notCompleted')}>NOT COMPLETED</button>
       </div>
-      <ul>
+      <Ul>
         {todos
           .filter(
             todo =>
@@ -54,9 +55,13 @@ const App: FunctionComponent = () => {
               {todo.text}
             </li>
           ))}
-      </ul>
+      </Ul>
     </>
   );
 };
 
 export default App;
+
+export const Ul = styled.ul`
+  list-style-type: none;
+`;
