@@ -1,18 +1,18 @@
 # React TypeScript Todo
 TypeScript, styled-componentsの練習で作ったTodoアプリです。
 
-# Setup
+## Setup
 
 ```
 $ yarn
 $ yarn start
 ```
 
-# Usage
+## Usage
 タスクを追加したり完了にしたりフィルタリングしたり
 
-# License
+## License
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
-# Authors
+## Authors
 [suuungwoo](https://github.com/suuungwoo)
