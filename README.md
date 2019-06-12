@@ -12,7 +12,7 @@ $ yarn start
 タスクを追加したり完了にしたりフィルタリングしたり
 
 ## License
-This project is licensed under the MIT License - see the LICENSE.md file for details
+This software is released under the MIT License, see LICENSE.
 
 ## Authors
 [suuungwoo](https://github.com/suuungwoo)
