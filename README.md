@@ -4,7 +4,6 @@ TypeScript, styled-componentsの練習で作ったTodoアプリです。
 # Setup
 
 ```
-$ git clone https://github.com/suuungwoo/react-todos.git
 $ yarn
 $ yarn start
 ```
